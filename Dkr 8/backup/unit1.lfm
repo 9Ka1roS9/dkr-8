@@ -1,0 +1,214 @@
+object Kalculator: TKalculator
+  Left = 321
+  Height = 455
+  Top = 214
+  Width = 806
+  Caption = 'Супер_Мега_Калькулятор_Объёмов_Чисел'
+  ClientHeight = 455
+  ClientWidth = 806
+  Color = clGradientActiveCaption
+  Constraints.MinHeight = 455
+  Constraints.MinWidth = 806
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  object TapControl1: TTabControl
+    Left = 0
+    Height = 456
+    Top = 0
+    Width = 808
+    OnChange = TapControl1Change
+    TabIndex = 0
+    Tabs.Strings = (
+      'Прямоугольный паралепипед'
+      'Пирамида'
+      'Цилиндр'
+      'Прямая призма'
+    )
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabOrder = 0
+    object Button_Resulte: TSpeedButton
+      AnchorSideRight.Control = TapControl1
+      AnchorSideRight.Side = asrBottom
+      Left = 710
+      Height = 42
+      Top = 296
+      Width = 88
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 8
+      Caption = 'Ответ'
+      Color = 13803114
+      Flat = True
+      Transparent = False
+      OnClick = Button_ResulteClick
+    end
+    object Edit1: TEdit
+      AnchorSideLeft.Control = Label_Reshim
+      AnchorSideRight.Control = TapControl1
+      AnchorSideRight.Side = asrBottom
+      Left = 158
+      Height = 23
+      Top = 200
+      Width = 640
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 150
+      BorderSpacing.Right = 8
+      Color = clGradientActiveCaption
+      NumbersOnly = True
+      TabOrder = 1
+    end
+    object Edit2: TEdit
+      AnchorSideLeft.Control = Label_b
+      AnchorSideRight.Control = TapControl1
+      AnchorSideRight.Side = asrBottom
+      Left = 158
+      Height = 23
+      Top = 232
+      Width = 640
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 150
+      BorderSpacing.Right = 8
+      Color = clGradientActiveCaption
+      NumbersOnly = True
+      TabOrder = 2
+    end
+    object Edit3: TEdit
+      AnchorSideLeft.Control = Label_c
+      AnchorSideRight.Control = TapControl1
+      AnchorSideRight.Side = asrBottom
+      Left = 158
+      Height = 23
+      Top = 264
+      Width = 640
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 150
+      BorderSpacing.Right = 8
+      Color = clGradientActiveCaption
+      NumbersOnly = True
+      TabOrder = 3
+    end
+    object Label_Resulte: TLabel
+      AnchorSideLeft.Control = TapControl1
+      Left = 8
+      Height = 25
+      Top = 313
+      Width = 54
+      BorderSpacing.Left = 6
+      Caption = 'Ответ:'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -19
+      Font.Name = 'Yu Gothic UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label_Reshim: TLabel
+      AnchorSideLeft.Control = TapControl1
+      AnchorSideTop.Control = TapControl1
+      Left = 8
+      Height = 25
+      Top = 29
+      Width = 457
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      Caption = 'Выберите фигуру у которой будем вычислять объём'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -19
+      Font.Name = 'Yu Gothic UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Histori_Resulte: TMemo
+      AnchorSideLeft.Control = TapControl1
+      AnchorSideTop.Control = Button_Resulte
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = TapControl1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = TapControl1
+      AnchorSideBottom.Side = asrBottom
+      Left = 8
+      Height = 108
+      Top = 340
+      Width = 790
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 6
+      Color = clGradientActiveCaption
+      Lines.Strings = (
+        'История ответ:'
+      )
+      ReadOnly = True
+      ScrollBars = ssVertical
+      TabOrder = 4
+    end
+    object Label_a: TLabel
+      AnchorSideRight.Control = Edit1
+      Left = 8
+      Height = 20
+      Top = 200
+      Width = 40
+      BorderSpacing.Left = 6
+      Caption = 'Ждем'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = 20
+      Font.Name = 'Yu Gothic UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label_b: TLabel
+      Left = 8
+      Height = 20
+      Top = 232
+      Width = 40
+      Caption = 'Ждем'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Yu Gothic UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label_c: TLabel
+      Left = 8
+      Height = 20
+      Top = 264
+      Width = 40
+      Caption = 'Ждем'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Yu Gothic UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Image_Figur: TImage
+      Left = 352
+      Height = 90
+      Top = 80
+      Width = 90
+      Anchors = [akTop]
+    end
+    object Button_Clear: TSpeedButton
+      AnchorSideRight.Control = Button_Resulte
+      Left = 614
+      Height = 42
+      Top = 296
+      Width = 88
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 8
+      Caption = 'Очистить'
+      Color = 13803114
+      Flat = True
+      Transparent = False
+      OnClick = Button_ClearClick
+    end
+  end
+end
